@@ -2,7 +2,7 @@
 *
 * jquery.sparkline.js
 *
-* v2.4.1
+* v2.4.0
 * (c) Splunk, Inc
 * Contact: Gareth Watts (gareth@splunk.com)
 * http://omnipotent.net/jquery.sparkline/
@@ -1820,7 +1820,7 @@
             }
             this.xaxisOffset = xaxisOffset;
 
-            range = stacked ? (Math.max.apply(Math, stackRanges) + Math.max.apply(Math, stackRangesNeg)) : max - min;
+            range = stacked ? Math.max((Math.max.apply(Math, stackRanges) + Math.max.apply(Math, stackRangesNeg)), max) : max - min;
 
             // as we plot zero/min values a single pixel line, we add a pixel to all other
             // values - Reduce the effective canvas size to suit

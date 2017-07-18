@@ -112,7 +112,7 @@
             }
             this.xaxisOffset = xaxisOffset;
 
-            range = stacked ? (Math.max.apply(Math, stackRanges) + Math.max.apply(Math, stackRangesNeg)) : max - min;
+            range = stacked ? Math.max((Math.max.apply(Math, stackRanges) + Math.max.apply(Math, stackRangesNeg)), max) : max - min;
 
             // as we plot zero/min values a single pixel line, we add a pixel to all other
             // values - Reduce the effective canvas size to suit
